@@ -63,3 +63,7 @@ body {
 .nav-main-links {
     display: none;
 }
+
+main {
+    grid-area: main;
+}
