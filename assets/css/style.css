@@ -9,7 +9,7 @@ body {
 .site-header-logo {
     display: inline;
     vertical-align: middle;
-    margin: 1em;
+    margin: 1rem;
 }
 
 .site-header-title {
@@ -88,7 +88,7 @@ main > article {
 @media screen and (min-width: 1280px) {
     body {
         grid-template-columns: 1fr;
-        grid-template-rows: 80px 3em 1fr 8rem;
+        grid-template-rows: 80px 3rem 1fr 8rem;
         grid-template-areas:
             "header"
             "nav"
