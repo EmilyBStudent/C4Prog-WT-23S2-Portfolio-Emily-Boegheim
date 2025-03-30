@@ -83,4 +83,17 @@ main {
             "main"
             "footer";
     }
+
+    .menu-button {
+        display: none;
+    }
+
+    .nav-main-links {
+        display: revert;
+    }
+
+    .nav-main-links li {
+        display: inline;
+        vertical-align: center;
+    }
 }
