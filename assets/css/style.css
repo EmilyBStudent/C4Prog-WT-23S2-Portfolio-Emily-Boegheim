@@ -35,6 +35,10 @@ body > footer {
     background: lightgoldenrodyellow;
 }
 
+article {
+    background: antiquewhite;
+}
+
 /* Mobile layout */
 body {
     grid-template-columns: 1fr 64px;
@@ -70,6 +74,10 @@ body {
 
 main {
     grid-area: main;
+}
+
+main > article {
+    margin: 1rem 2rem;
 }
 
 .site-footer {
