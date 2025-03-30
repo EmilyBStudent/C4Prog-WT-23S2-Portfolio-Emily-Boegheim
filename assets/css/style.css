@@ -47,10 +47,14 @@ body {
 
 .site-header {
     grid-area: header;
+    position: sticky;
+    top: 0;
 }
 
 .nav-main {
     grid-area: nav;
+    position: sticky;
+    top: 0;
     align-content: center;
     text-align: center;
 }
