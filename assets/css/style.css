@@ -1,0 +1,65 @@
+body {
+    display: grid;
+}
+
+.site-header {
+    align-content: center;
+}
+
+.site-header-logo {
+    display: inline;
+    vertical-align: middle;
+    margin: 1em;
+}
+
+.site-header-title {
+    margin: 0;
+    display: inline;
+    vertical-align: middle;
+}
+
+/* Temporary styling to assist with visualising layout */
+.site-header {
+    background: lightpink;
+}
+
+.nav-main {
+    background: lightgreen;
+}
+
+body > main {
+    background: lightblue;
+}
+
+body > footer {
+    background: lightgoldenrodyellow;
+}
+
+/* Mobile layout */
+body {
+    grid-template-columns: 1fr 64px;
+    grid-template-rows: 80px 1fr 5rem;
+    grid-template-areas:
+        "header nav"
+        "main main"
+        "footer footer";
+}
+
+.site-header {
+    grid-area: header;
+}
+
+.nav-main {
+    grid-area: nav;
+    align-content: center;
+    text-align: center;
+}
+
+.menu-button {
+    width: 32px;
+    height: auto;
+}
+
+.nav-main-links {
+    display: none;
+}
