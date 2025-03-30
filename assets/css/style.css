@@ -96,4 +96,9 @@ main {
         display: inline;
         vertical-align: center;
     }
+
+    main {
+        width: 70%;
+        margin: auto;
+    }
 }
