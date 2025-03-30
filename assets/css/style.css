@@ -71,3 +71,16 @@ main {
 .site-footer {
     grid-area: footer;
 }
+
+/* Desktop layout */
+@media screen and (min-width: 1280px) {
+    body {
+        grid-template-columns: 1fr;
+        grid-template-rows: 80px 3em 1fr 8rem;
+        grid-template-areas:
+            "header"
+            "nav"
+            "main"
+            "footer";
+    }
+}
