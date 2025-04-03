@@ -88,6 +88,10 @@ main > article {
     margin: 1rem 2rem;
 }
 
+main > aside {
+    display: none;
+}
+
 .site-footer {
     grid-area: footer;
 }
@@ -144,6 +148,7 @@ main > article {
     }
 
     main > aside {
+        display: revert;
         grid-column: 3;
         grid-row: 1;
     }
