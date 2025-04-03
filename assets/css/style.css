@@ -110,7 +110,24 @@ main > article {
     }
 
     main {
-        width: 70%;
+        width: 80%;
         margin: auto;
+        display: grid;
+        grid-template-columns: 3fr 3fr 2fr;
+        grid-template-rows: auto;
+        align-content: start;
+        grid-gap: 1rem;
+    }
+
+    main > article {
+        margin: 0;
+    }
+
+    main > article:nth-child(odd) {
+        grid-column: 1;
+    }
+
+    main > article:nth-child(even) {
+        grid-column: 2;
     }
 }
