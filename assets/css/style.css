@@ -1,3 +1,7 @@
+:root {
+    --header-height: 80px;
+}
+
 body {
     display: grid;
 }
@@ -46,11 +50,11 @@ aside {
 /* Mobile layout */
 body {
     grid-template-columns: 1fr 64px;
-    grid-template-rows: 80px 1fr 8rem;
+    grid-template-rows: var(--header-height) 1fr 8rem;
     grid-template-areas:
-        "header nav"
-        "main main"
-        "footer footer";
+    "header nav"
+    "main main"
+    "footer footer";
 }
 
 .site-header {
@@ -92,16 +96,20 @@ main > article {
 @media screen and (min-width: 1280px) {
     body {
         grid-template-columns: 1fr;
-        grid-template-rows: 80px 3rem 1fr 8rem;
+        grid-template-rows: var(--header-height) 3rem 1fr 8rem;
         grid-template-areas:
-            "header"
-            "nav"
-            "main"
-            "footer";
+        "header"
+        "nav"
+        "main"
+        "footer";
     }
 
     .menu-button {
         display: none;
+    }
+
+    .nav-main {
+        top: var(--header-height);
     }
 
     .nav-main-links {
