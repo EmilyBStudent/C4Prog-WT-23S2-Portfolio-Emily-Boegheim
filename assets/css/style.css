@@ -39,6 +39,10 @@ article {
     background: antiquewhite;
 }
 
+aside {
+    background: lightcyan;
+}
+
 /* Mobile layout */
 body {
     grid-template-columns: 1fr 64px;
@@ -129,5 +133,10 @@ main > article {
 
     main > article:nth-child(even) {
         grid-column: 2;
+    }
+
+    main > aside {
+        grid-column: 3;
+        grid-row: 1;
     }
 }
