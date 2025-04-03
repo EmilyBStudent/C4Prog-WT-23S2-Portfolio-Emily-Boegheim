@@ -39,11 +39,11 @@ body > footer {
     background: lightgoldenrodyellow;
 }
 
-article {
+.article {
     background: antiquewhite;
 }
 
-aside {
+.aside {
     background: lightcyan;
 }
 
@@ -84,11 +84,11 @@ main {
     grid-area: main;
 }
 
-main > article {
+.article {
     margin: 1rem 2rem;
 }
 
-main > aside {
+.aside {
     display: none;
 }
 
@@ -135,19 +135,19 @@ main > aside {
         grid-gap: 1rem;
     }
 
-    main > article {
+    .article {
         margin: 0;
     }
 
-    main > article:nth-child(odd) {
+    .article:nth-child(odd) {
         grid-column: 1;
     }
 
-    main > article:nth-child(even) {
+    .article:nth-child(even) {
         grid-column: 2;
     }
 
-    main > aside {
+    .aside {
         display: revert;
         grid-column: 3;
         grid-row: 1;
