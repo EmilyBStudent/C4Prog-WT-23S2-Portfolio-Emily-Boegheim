@@ -152,6 +152,14 @@ main {
         vertical-align: center;
     }
 
+    .nav-main-links li::before {
+        content: "| ";
+    }
+
+    .nav-main-links li:first-child::before {
+        content: none;
+    }
+
     main {
         width: 80%;
         margin: auto;
