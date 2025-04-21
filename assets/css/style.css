@@ -127,6 +127,20 @@ main {
     display: none;
 }
 
+.main-figure,
+.aside-figure {
+    margin: 1rem 0;
+    padding: 0;
+}
+
+.main-figure img,
+.aside-figure img {
+    max-width: 100%;
+    max-height: 250px;
+    height: auto;
+    width: auto;
+}
+
 .site-footer {
     grid-area: footer;
 }
