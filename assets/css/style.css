@@ -1,5 +1,12 @@
 :root {
     --header-height: 80px;
+
+    /* Site colours */
+    --color-light-main: white;
+    --color-dark-main: #2D3142;
+    --color-light-highlight: #E7DFDB;
+    --color-dark-highlight: #3B4674;
+    --color-dark-contrast: #792611;
 }
 
 body {
@@ -8,6 +15,8 @@ body {
 
 .site-header {
     align-content: center;
+    background-color: var(--color-dark-main);
+    color: var(--color-light-main);
 }
 
 .site-header-logo {
@@ -22,29 +31,46 @@ body {
     vertical-align: middle;
 }
 
-/* Temporary styling to assist with visualising layout */
-.site-header {
-    background: lightpink;
+.nav-main,
+.site-footer {
+    background-color: var(--color-dark-main);
+    color: var(--color-light-main);
 }
 
-.nav-main {
-    background: lightgreen;
+.nav-main-links a,
+.nav-footer a {
+    color: var(--color-light-main);
+    text-decoration: none;
 }
 
-body > main {
-    background: lightblue;
+.nav-main-links a:hover,
+.nav-main-links a:active,
+.nav-footer a:hover,
+.nav-footer a:active {
+    text-decoration: underline;
 }
 
-body > footer {
-    background: lightgoldenrodyellow;
+main {
+    color: var(--color-dark-main);
 }
 
-.article {
-    background: antiquewhite;
+main h2 {
+    color: var(--color-dark-contrast);
 }
 
-.aside {
-    background: lightcyan;
+aside h2 {
+    color: var(--color-dark-main);
+}
+
+main a {
+    color: var(--color-dark-highlight);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+main a:hover,
+main a:active {
+    text-decoration: underline;
 }
 
 /* Mobile layout */
@@ -74,6 +100,7 @@ body {
 .menu-button {
     width: 32px;
     height: auto;
+    filter: invert(1);
 }
 
 .nav-main-links {
@@ -148,8 +175,18 @@ main {
     }
 
     .aside {
+        /* Layout */
         display: revert;
         grid-column: 3;
         grid-row: 1;
+        height: auto;
+        margin: auto 0 auto 0;
+        padding: 0.5rem;
+
+        /* Styling */
+        background-color: var(--color-light-highlight);
+        color: var(--color-dark-main);
+        border: 5px double var(--color-dark-contrast);
+        border-radius: 0.5rem;
     }
 }
