@@ -37,6 +37,10 @@ body {
     color: var(--color-light-main);
 }
 
+.nav-footer li {
+    list-style: none;
+}
+
 .nav-main-links a,
 .nav-footer a {
     color: var(--color-light-main);
@@ -71,6 +75,10 @@ main a {
 main a:hover,
 main a:active {
     text-decoration: underline;
+}
+
+.site-footer {
+    padding: 0 1.5rem;
 }
 
 /* Mobile layout */
