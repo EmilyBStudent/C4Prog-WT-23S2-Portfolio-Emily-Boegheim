@@ -3,8 +3,11 @@
   <head>
     <meta charset="UTF-8">
     <title>Title Goes Here</title>
+
     <link rel="stylesheet" href="/assets/css/modern-normalize.css">
     <link rel="stylesheet" href="/assets/css/style.css">
+
+    <script src="/assets/js/stars-and-planets.js" defer></script>
   </head>
 
   <body>
@@ -135,56 +138,34 @@
 
       <article class="article">
         <header>
-          <h2>Teacher + Student = dumb and dumber</h2>
+          <h2>Stars and Planets</h2>
+          <p>Select a star or a planet in the form below to learn more about it!</p>
         </header>
 
-        <section>
-          <h3>Copy, Copy</h3>
-          <p>David Tune of Boambee, NSW, was reminded of a particularly clever pair of IT Diploma
-            students who handed in a joint research assignment, complete with the required signed
-            statement that it was all their original work.</p>
-          <p>Tune recalls: "Upon reading the work for grading, I was incredibly impressed to find
-            three pages of the document written in perfect technical German, particularly given
-            that the students in question were none too articulate when I asked 'Sprechen sie Deutsch?'</p>
-          <p>End result: assignment rejected, students counselled and more care taken when cutting
-            and pasting to cover assignment work.</p>
-          <figure class="main-figure">
-            <img src="/assets/img/leaning_tower.jpg"
-                 alt="The Leaning Tower of Pisa surrounded by HTML i (italic) tags"
-                 width="400" height="572">
-            <figcaption>Inspecting the Leaning Tower of Pisa: So that's why!!! Image by
-              <a href="https://www.flickr.com/photos/30127486@N00/346483297" target="_blank">Jesper Rønn-Jensen</a>.</figcaption>
-          </figure>
-        </section>
+        <form method="get" id="api-request-form">
+          <fieldset id="stars-or-planets">
+            <legend>Select stars or planets to learn more</legend>
+            <input type="checkbox" id="stars" name="stars" value="stars">
+            <label for="stars">Stars</label>
+            <input type="checkbox" id="planets" name="planets" value="planets">
+            <label for="planets">Planets</label>
+          </fieldset>
 
-        <section>
-          <h3>Tutoring the Tutor</h3>
-          <p>Neil Meyers, library assistant from Gilles Plains in SA, recalls an incident
-            with a part-time computer lecturer a couple of years ago.</p>
-          <p>"I work in a vocational education library, and, on night shift, library staff are
-            the default computer technicians/troubleshooters. One night, this part-time
-            lecturer came to the counter, stating that she'd managed to get a CD-ROM disc
-            stuck in the drive. She also said she felt a bit foolish, because she was
-            instructing a class in basic computing and was unable to solve the problem in
-            front of a room full of students.</p>
-          <p>So I wandered over to give her assistance, pushed the drive eject button, out
-            popped the tray and... no disc to be seen.</p>
-          <p>Before I was able to ask out the obvious question, she piped up,
-            'That's the CD drive? I thought it was the other one!', pointing to an old 5.25in
-            floppy disc slot, which was there even though the drives themselves had long
-            since been decommissioned.</p>
-          <p>Someone from IT got out the disc the next day when they upended the machine
-            and it fell out. Then, a week later, after I gave the lecturer her CD back,
-            she was back within five minutes, saying, 'You won't believe it, I've done it again!'</p>
-          <p>And this was their computing tutor? So there I am in front of her class,
-            shaking the heck out of the machine. So much for teaching people to handle
-            their computers with care!"</p>
-        </section>
+          <fieldset id="form-options">
+            <legend>Which would you like to learn about?</legend>
+            <label for="heavenly-body">
+              Select which heavenly body you would like to learn more about:
+            </label>
+            <select id="heavenly-body">
+              <option value="">--- Select an option ---</option>
+            </select>
+            <button type="submit">Submit</button>
+          </fieldset>
 
-        <footer>
-          <p>Content is provided with permission from APC Magazine (TechRadar.com) for the
-            purposes of education and training. Content is Copyright 2007 APC Magazine.</p>
-        </footer>
+        <fieldset id="form-results">
+          <legend>Results</legend>
+        </fieldset>
+        </form>
       </article>
 
       <article class="article">
