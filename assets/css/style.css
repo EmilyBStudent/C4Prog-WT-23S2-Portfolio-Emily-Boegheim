@@ -145,6 +145,51 @@ main {
     grid-area: footer;
 }
 
+/* Form styling - mobile */
+#api-request-form fieldset {
+    margin-bottom: 0.6rem;
+    padding: 0.4rem 1rem 0.8rem 1rem;
+}
+
+#api-request-form legend {
+    padding: 0 0.25rem 0 0.25rem;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+#stars-or-planets label {
+    margin-right: 1rem;
+}
+
+#form-options label,
+#form-options select,
+#form-options button {
+    display: block;
+    margin: 0.4rem 0 0.75rem 0;
+}
+
+#form-results {
+    min-height: 8rem;
+}
+
+#form-results table {
+    border-collapse: collapse;
+}
+
+#form-results thead {
+    background: var(--color-light-highlight);
+}
+
+#form-results h3 {
+    margin: 0;
+}
+
+#form-results td,
+#form-results th {
+    border: var(--color-dark-highlight) 1px solid;
+    padding: 0.5rem;
+}
+
 /* Desktop layout */
 @media screen and (min-width: 1280px) {
     body {
