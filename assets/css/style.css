@@ -161,9 +161,13 @@ main {
     margin-right: 1rem;
 }
 
-#form-options label,
-#form-options select,
-#form-options button {
+.form-options {
+    display: none;
+}
+
+.form-options label,
+.form-options select,
+.form-options button {
     display: block;
     margin: 0.4rem 0 0.75rem 0;
 }

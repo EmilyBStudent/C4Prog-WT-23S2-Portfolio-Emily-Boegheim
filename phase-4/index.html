@@ -145,18 +145,31 @@
         <form method="get" id="api-request-form">
           <fieldset id="stars-or-planets">
             <legend>Select stars or planets to learn more</legend>
-            <input type="checkbox" id="stars" name="stars" value="stars">
+            <input type="checkbox" id="stars" name="stars" value="stars"
+                   data-api="https://api.api-ninjas.com/v1/stars">
             <label for="stars">Stars</label>
-            <input type="checkbox" id="planets" name="planets" value="planets">
+            <input type="checkbox" id="planets" name="planets" value="planets"
+                   data-api="https://api.api-ninjas.com/v1/planets">
             <label for="planets">Planets</label>
           </fieldset>
 
-          <fieldset id="form-options">
-            <legend>Which would you like to learn about?</legend>
-            <label for="heavenly-body">
-              Select which heavenly body you would like to learn more about:
+          <fieldset id="planets-options" class="form-options">
+            <legend>Which planet would you like to learn about?</legend>
+            <label for="planet">
+              Select a planet you would like to learn more about:
             </label>
-            <select id="heavenly-body">
+            <select id="planet">
+              <option value="">--- Select an option ---</option>
+            </select>
+            <button type="submit">Submit</button>
+          </fieldset>
+
+          <fieldset id="stars-options" class="form-options">
+            <legend>Which star would you like to learn about?</legend>
+            <label for="star">
+              Select a star you would like to learn more about:
+            </label>
+            <select id="star">
               <option value="">--- Select an option ---</option>
             </select>
             <button type="submit">Submit</button>
