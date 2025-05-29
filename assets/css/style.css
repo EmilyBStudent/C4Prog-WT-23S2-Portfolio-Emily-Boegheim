@@ -84,11 +84,13 @@ main a:active {
 /* Mobile layout */
 body {
     grid-template-columns: 1fr 64px;
-    grid-template-rows: var(--header-height) 1fr 8rem;
+    grid-template-rows: var(--header-height) 1fr 11.5rem;
     grid-template-areas:
     "header nav"
     "main main"
     "footer footer";
+    font-size: 18px;
+    line-height: 1.4em;
 }
 
 .site-header {
@@ -198,12 +200,13 @@ main {
 @media screen and (min-width: 1280px) {
     body {
         grid-template-columns: 1fr;
-        grid-template-rows: var(--header-height) 3rem 1fr 8rem;
+        grid-template-rows: var(--header-height) 3rem 1fr 8.5rem;
         grid-template-areas:
         "header"
         "nav"
         "main"
         "footer";
+        font-size: 16px;
     }
 
     .menu-button {
