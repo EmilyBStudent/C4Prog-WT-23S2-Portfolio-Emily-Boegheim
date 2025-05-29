@@ -5,19 +5,19 @@
 function checkOnlyOneBox(event) {
   const starsCheckbox = document.getElementById('stars');
   const planetsCheckbox = document.getElementById('planets');
-  const starsOptions = document.getElementById("stars-options");
-  const planetsOptions = document.getElementById("planets-options");
+  const starsOptions = document.getElementById('stars-options');
+  const planetsOptions = document.getElementById('planets-options');
   if (event.target === starsCheckbox && starsCheckbox.checked) {
     planetsCheckbox.checked = false;
-    starsOptions.style.display = "block";
-    planetsOptions.style.display = "none";
+    starsOptions.style.display = 'block';
+    planetsOptions.style.display = 'none';
   } else if (event.target === planetsCheckbox && planetsCheckbox.checked) {
     starsCheckbox.checked = false;
-    starsOptions.style.display = "none";
-    planetsOptions.style.display = "block";
+    starsOptions.style.display = 'none';
+    planetsOptions.style.display = 'block';
   } else {
-    starsOptions.style.display = "none";
-    planetsOptions.style.display = "none";
+    starsOptions.style.display = 'none';
+    planetsOptions.style.display = 'none';
   }
 }
 
