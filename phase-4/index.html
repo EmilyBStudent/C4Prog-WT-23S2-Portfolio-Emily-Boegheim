@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../assets/css/modern-normalize.css">
     <link rel="stylesheet" href="../assets/css/style.css">
 
+    <script src="../assets/js/api-key.js" defer></script>
     <script src="../assets/js/stars-and-planets.js" defer></script>
   </head>
 
@@ -148,10 +149,10 @@
           <fieldset id="stars-or-planets">
             <legend>Select stars or planets to learn more</legend>
             <input type="checkbox" id="stars" name="stars" value="stars"
-                   data-api="https://api.api-ninjas.com/v1/stars">
+                   data-api="v1/stars" data-options="star">
             <label for="stars">Stars</label>
             <input type="checkbox" id="planets" name="planets" value="planets"
-                   data-api="https://api.api-ninjas.com/v1/planets">
+                   data-api="v1/planets" data-options="planet">
             <label for="planets">Planets</label>
           </fieldset>
 
