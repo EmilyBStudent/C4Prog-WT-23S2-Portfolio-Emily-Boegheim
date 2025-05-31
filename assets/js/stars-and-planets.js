@@ -28,7 +28,15 @@ function checkOnlyOneBox(event) {
  */
 async function callApi(event) {
   event.preventDefault();
-  const requestValues = getFormValues();
+  clearResults();
+  let requestValues;
+  try {
+    requestValues = getFormValues();
+  } catch (error) {
+    console.error(error);
+    displayError(error);
+    return;
+  }
   const requestUrl = buildApiUrl(requestValues);
   await fetch(requestUrl, {
     headers: {'X-Api-Key': apiKey}
@@ -45,6 +53,17 @@ async function callApi(event) {
 }
 
 /**
+ * Clear all results and error messages from the results box, leaving only the
+ * box's legend in place.
+ */
+function clearResults() {
+  const resultsBox = document.getElementById('form-results');
+  while (resultsBox.childElementCount > 1) {
+    resultsBox.lastElementChild.remove();
+  }
+}
+
+/**
  * Get the values for the API request from the form and return them as an
  * object.
  * @returns {Object} with fields route and name, giving the API route to use and
@@ -53,15 +72,16 @@ async function callApi(event) {
 function getFormValues() {
   const selectedCheckbox = document.querySelector('#stars-or-planets input:checked');
   if (!selectedCheckbox) {
-    // TODO: error handling
-    // stop here
-    return;
+    throw new Error('Please select either stars or planets.');
   }
 
   const apiRequestValues = new Object();
   apiRequestValues.route = selectedCheckbox.dataset.api;
   const optionsInputId = selectedCheckbox.dataset.options;
   apiRequestValues.name = document.getElementById(optionsInputId).value;
+  if (!apiRequestValues.name) {
+    throw new Error(`Please select a ${optionsInputId} to learn more about.`);
+  }
   return apiRequestValues;
 }
 
@@ -103,13 +123,22 @@ function buildResultsTable(data) {
  */
 function displayApiResults(results) {
   const resultsBox = document.getElementById('form-results');
-  while (resultsBox.childElementCount > 1) {
-    resultsBox.lastElementChild.remove();
-  }
   for (const index in results) {
     const table = buildResultsTable(results[index]);
     resultsBox.append(table);
   }
+}
+
+/**
+ * Display a given error in the results box to advise the user of the issue.
+ * @param error The Error object to be displayed.
+ */
+function displayError(error) {
+  const resultsBox = document.getElementById('form-results');
+  const errorElement = document.createElement('p');
+  errorElement.classList.add('error');
+  errorElement.textContent = error.message;
+  resultsBox.append(errorElement);
 }
 
 /**

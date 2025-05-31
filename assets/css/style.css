@@ -77,6 +77,11 @@ main a:active {
     text-decoration: underline;
 }
 
+.error {
+    color: var(--color-dark-contrast);
+    font-weight: bold;
+}
+
 .site-footer {
     padding: 0 1.5rem;
 }
