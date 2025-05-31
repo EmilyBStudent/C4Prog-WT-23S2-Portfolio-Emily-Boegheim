@@ -42,13 +42,18 @@ async function callApi(event) {
     headers: {'X-Api-Key': apiKey}
     })
     .then(async function (response) {
-      if (!response.ok) {
-        // TODO: error handling
+      try {
+        return await checkAndParseResponse(response);
+      } catch (error) {
+        throw error;
       }
-      return await response.json();
     })
     .then(function (results) {
       displayApiResults(results);
+    })
+    .catch(function (error) {
+      console.error(error);
+      displayError(error);
     });
 }
 
@@ -95,6 +100,26 @@ function buildApiUrl(requestValues) {
   const apiUrl = `https://api.api-ninjas.com/${requestValues.route}?` +
     `name=${requestValues.name}`;
   return apiUrl;
+}
+
+/**
+ * Check the API response status and throw an Error if the status is not ok.
+ * If ok, parse the response as JSON.
+ * @param response The API response object.
+ * @returns {Promise<any>} The response parsed from JSON into an object.
+ */
+async function checkAndParseResponse(response) {
+  if (!response.ok) {
+    const responseData = await response.json();
+    let responseText;
+    if (responseData && responseData.error) {
+      responseText = responseData.error;
+    } else {
+      responseText = response.statusText;
+    }
+    throw new Error(`Error ${response.status} ${responseText}`);
+  }
+  return await response.json();
 }
 
 /**
