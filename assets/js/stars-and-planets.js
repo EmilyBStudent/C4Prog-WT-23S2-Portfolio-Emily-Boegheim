@@ -128,13 +128,27 @@ async function checkAndParseResponse(response) {
  * @returns {HTMLTableElement} A table element containing the API data.
  */
 function buildResultsTable(data) {
+  const unitInfo = {
+    'mass': 'Jupiters (1 Jupiter = 1.898 × 1027 kg)',
+    'radius': 'Jupiters (1 Jupiter = 69911 km)',
+    'period': 'Earth days',
+    'temperature': 'Kelvin',
+    'distance_light_year': 'light years from Earth',
+    'semi_major_axis': 'astronomical units (AU)',
+    'host_star_mass': 'Suns (approximately 2×1030 kg)',
+    'host_star_temperature': 'Kelvin'
+  }
   const table = document.createElement('table');
   let tableContents = `<thead><tr><th colspan="2" scope="col"><h3>${data.name}</h3></th></tr></thead>`;
   tableContents += '<tbody>';
   for (let property in data) {
     if (property !== 'name') {
       const propAsTitle = property.replaceAll('_', ' ');
-      tableContents += `<tr><th scope="row">${propAsTitle}</th><td>${data[property]}</td></tr>`
+      let dataWithUnit = data[property];
+      if (property in unitInfo) {
+        dataWithUnit += ` ${unitInfo[property]}`;
+      }
+      tableContents += `<tr><th scope="row">${propAsTitle}</th><td>${dataWithUnit}</td></tr>`
     }
   }
   tableContents += '</tbody>';
